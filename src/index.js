@@ -12,24 +12,61 @@
 
 
 
-import { extractResumeText, analyzeResume } from "./agents/resumeAgent.js";
+// import { extractResumeText, analyzeResume } from "./agents/resumeAgent.js";
+
+// const runTest = async () => {
+//   const resumePath = "./sample_resume.pdf";
+//   const jobDescription = `
+// We are looking for a Full Stack Developer skilled in JavaScript, Node.js, and React.
+// Experience with REST APIs and database design is a must.
+// `;
+
+//   console.log("📄 Extracting resume...");
+//   const resumeText = await extractResumeText(resumePath);
+
+//   console.log("🤖 Analyzing resume vs job description...");
+//   const analysis = await analyzeResume(resumeText, jobDescription);
+
+//   console.log("\n🧠 CareerForge Resume Review:\n");
+//   console.log(analysis);
+// };
+
+// runTest();
+
+
+
+import { extractResumeText } from "./agents/resumeAgent.js";
+import { matchJobsList } from "./agents/jobMatcherAgent.js";
 
 const runTest = async () => {
   const resumePath = "./sample_resume.pdf";
-  const jobDescription = `
-We are looking for a Full Stack Developer skilled in JavaScript, Node.js, and React.
-Experience with REST APIs and database design is a must.
-`;
+  const jobs = [
+    {
+      title: "Full Stack Developer",
+      description: "We need a developer skilled in JavaScript, Node.js, React, REST APIs, and database design."
+    },
+    {
+      title: "Mobile App Developer",
+      description: "Experience with Flutter, Dart, Firebase, BLoC, and mobile UI design."
+    },
+    {
+      title: "Data Analyst",
+      description: "Skills required: SQL, Python, Excel, Data Visualization, Business Intelligence."
+    }
+  ];
 
-  console.log("📄 Extracting resume...");
   const resumeText = await extractResumeText(resumePath);
 
-  console.log("🤖 Analyzing resume vs job description...");
-  const analysis = await analyzeResume(resumeText, jobDescription);
+  console.log("🔍 Matching jobs...");
+  const results = await matchJobsList(resumeText, jobs);
 
-  console.log("\n🧠 CareerForge Resume Review:\n");
-  console.log(analysis);
+  console.log("\n🏆 Top Job Matches:");
+  results.forEach((r, i) => {
+    console.log(`${i + 1}. ${r.job_title} — Score: ${r.match.score}`);
+    console.log("   Matched Skills:", r.match.matched_skills.join(", "));
+  });
 };
 
 runTest();
+
 
