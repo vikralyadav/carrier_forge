@@ -1,3 +1,9 @@
+
+
+
+//OLLAMA CLIENT TEST 
+
+
 // import {  createOllamaClient } from "./core/ollamaClient.js";
 
 // const OllamaClient = createOllamaClient("mistral");
@@ -12,6 +18,9 @@
 
 
 
+//RESUME PARSER TEST
+
+
 // import { extractResumeText, analyzeResume } from "./agents/resumeAgent.js";
 
 // const runTest = async () => {
@@ -21,17 +30,20 @@
 // Experience with REST APIs and database design is a must.
 // `;
 
-//   console.log("📄 Extracting resume...");
+//   console.log(" Extracting resume...");
 //   const resumeText = await extractResumeText(resumePath);
 
-//   console.log("🤖 Analyzing resume vs job description...");
+//   console.log(" Analyzing resume vs job description...");
 //   const analysis = await analyzeResume(resumeText, jobDescription);
 
-//   console.log("\n🧠 CareerForge Resume Review:\n");
+//   console.log("\n CareerForge Resume Review:\n");
 //   console.log(analysis);
 // };
 
 // runTest();
+
+
+//RESUME JOB MATCHER TEST
 
 
 
@@ -71,27 +83,73 @@
 
 
 
+//ORCHESTRATOR TEST
 
 
 
-import { extractResumeText } from "./agents/resumeAgent.js";
-import { runCareerForgeWorkflow } from "./agents/careerForgeOrchestrator.js";
+
+
+
+
+// import { extractResumeText } from "./agents/resumeAgent.js";
+// import { runCareerForgeWorkflow } from "./agents/careerForgeOrchestrator.js";
+
+// const runTest = async () => {
+//   const resumePath = "./sample_resume.pdf";
+//   const jobs = [
+//     { title: "Full Stack Developer", description: "JavaScript, Node.js, React, REST APIs" },
+//     { title: "Mobile App Developer", description: "Flutter, Dart, Firebase, BLoC" },
+//     { title: "Data Analyst", description: "SQL, Python, Excel, Data Visualization" }
+//   ];
+
+//   const resumeText = await extractResumeText(resumePath);
+
+//   console.log(" Running full CareerForge workflow...");
+//   const results = await runCareerForgeWorkflow(resumeText, jobs);
+
+//   console.log("\n CareerForge Results:");
+//   console.log(JSON.stringify(results, null, 2));
+// };
+
+// runTest();
+
+
+
+// INTERRVIEW AGENT TEST
+import { runBehavioralInterview, runTechnicalInterview } from "./agents/interviewAgent.js";
 
 const runTest = async () => {
-  const resumePath = "./sample_resume.pdf";
-  const jobs = [
-    { title: "Full Stack Developer", description: "JavaScript, Node.js, React, REST APIs" },
-    { title: "Mobile App Developer", description: "Flutter, Dart, Firebase, BLoC" },
-    { title: "Data Analyst", description: "SQL, Python, Excel, Data Visualization" }
+  const behavioralQuestions = [
+    "Tell me about a time you faced a challenge at work and how you handled it.",
+    "Describe a project where you demonstrated leadership."
   ];
 
-  const resumeText = await extractResumeText(resumePath);
+  const candidateContext = {
+    name: "John Doe",
+    resume_summary: "Software Engineer skilled in Flutter, Dart, Firebase"
+  };
 
-  console.log("🚀 Running full CareerForge workflow...");
-  const results = await runCareerForgeWorkflow(resumeText, jobs);
+  console.log(" Running Behavioral Interview...");
+  const behavioralResults = await runBehavioralInterview(behavioralQuestions, candidateContext);
+  console.log(JSON.stringify(behavioralResults, null, 2));
 
-  console.log("\n✅ CareerForge Results:");
-  console.log(JSON.stringify(results, null, 2));
+  const technicalQuestions = [
+    { question: "Write a function to reverse a linked list in JavaScript." },
+    { question: "Explain how a REST API works and its main components." }
+  ];
+
+  console.log("\n Running Technical Interview...");
+  const technicalResults = await runTechnicalInterview(technicalQuestions);
+  console.log(JSON.stringify(technicalResults, null, 2));
 };
 
 runTest();
+
+
+
+
+
+
+
+
+
