@@ -35,38 +35,63 @@
 
 
 
+// import { extractResumeText } from "./agents/resumeAgent.js";
+// import { matchJobsList } from "./agents/jobMatcherAgent.js";
+
+// const runTest = async () => {
+//   const resumePath = "./sample_resume.pdf";
+//   const jobs = [
+//     {
+//       title: "Full Stack Developer",
+//       description: "We need a developer skilled in JavaScript, Node.js, React, REST APIs, and database design."
+//     },
+//     {
+//       title: "Mobile App Developer",
+//       description: "Experience with Flutter, Dart, Firebase, BLoC, and mobile UI design."
+//     },
+//     {
+//       title: "Data Analyst",
+//       description: "Skills required: SQL, Python, Excel, Data Visualization, Business Intelligence."
+//     }
+//   ];
+
+//   const resumeText = await extractResumeText(resumePath);
+
+//   console.log("🔍 Matching jobs...");
+//   const results = await matchJobsList(resumeText, jobs);
+
+//   console.log("\n🏆 Top Job Matches:");
+//   results.forEach((r, i) => {
+//     console.log(`${i + 1}. ${r.job_title} — Score: ${r.match.score}`);
+//     console.log("   Matched Skills:", r.match.matched_skills.join(", "));
+//   });
+// };
+
+// runTest();
+
+
+
+
+
+
 import { extractResumeText } from "./agents/resumeAgent.js";
-import { matchJobsList } from "./agents/jobMatcherAgent.js";
+import { runCareerForgeWorkflow } from "./agents/careerForgeOrchestrator.js";
 
 const runTest = async () => {
   const resumePath = "./sample_resume.pdf";
   const jobs = [
-    {
-      title: "Full Stack Developer",
-      description: "We need a developer skilled in JavaScript, Node.js, React, REST APIs, and database design."
-    },
-    {
-      title: "Mobile App Developer",
-      description: "Experience with Flutter, Dart, Firebase, BLoC, and mobile UI design."
-    },
-    {
-      title: "Data Analyst",
-      description: "Skills required: SQL, Python, Excel, Data Visualization, Business Intelligence."
-    }
+    { title: "Full Stack Developer", description: "JavaScript, Node.js, React, REST APIs" },
+    { title: "Mobile App Developer", description: "Flutter, Dart, Firebase, BLoC" },
+    { title: "Data Analyst", description: "SQL, Python, Excel, Data Visualization" }
   ];
 
   const resumeText = await extractResumeText(resumePath);
 
-  console.log("🔍 Matching jobs...");
-  const results = await matchJobsList(resumeText, jobs);
+  console.log("🚀 Running full CareerForge workflow...");
+  const results = await runCareerForgeWorkflow(resumeText, jobs);
 
-  console.log("\n🏆 Top Job Matches:");
-  results.forEach((r, i) => {
-    console.log(`${i + 1}. ${r.job_title} — Score: ${r.match.score}`);
-    console.log("   Matched Skills:", r.match.matched_skills.join(", "));
-  });
+  console.log("\n✅ CareerForge Results:");
+  console.log(JSON.stringify(results, null, 2));
 };
 
 runTest();
-
-
