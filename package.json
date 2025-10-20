@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@langchain/langgraph": "^1.0.0",
     "axios": "^1.12.2",
     "dotenv": "^17.2.3",
     "fs-extra": "^11.3.2",

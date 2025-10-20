@@ -115,35 +115,74 @@
 
 
 
-// INTERRVIEW AGENT TEST
-import { runBehavioralInterview, runTechnicalInterview } from "./agents/interviewAgent.js";
+// // INTERRVIEW AGENT TEST
+// import { runBehavioralInterview, runTechnicalInterview } from "./agents/interviewAgent.js";
 
-const runTest = async () => {
-  const behavioralQuestions = [
-    "Tell me about a time you faced a challenge at work and how you handled it.",
-    "Describe a project where you demonstrated leadership."
-  ];
+// const runTest = async () => {
+//   const behavioralQuestions = [
+//     "Tell me about a time you faced a challenge at work and how you handled it.",
+//     "Describe a project where you demonstrated leadership."
+//   ];
 
-  const candidateContext = {
-    name: "John Doe",
-    resume_summary: "Software Engineer skilled in Flutter, Dart, Firebase"
-  };
+//   const candidateContext = {
+//     name: "John Doe",
+//     resume_summary: "Software Engineer skilled in Flutter, Dart, Firebase"
+//   };
 
-  console.log(" Running Behavioral Interview...");
-  const behavioralResults = await runBehavioralInterview(behavioralQuestions, candidateContext);
-  console.log(JSON.stringify(behavioralResults, null, 2));
+//   console.log(" Running Behavioral Interview...");
+//   const behavioralResults = await runBehavioralInterview(behavioralQuestions, candidateContext);
+//   console.log(JSON.stringify(behavioralResults, null, 2));
 
-  const technicalQuestions = [
-    { question: "Write a function to reverse a linked list in JavaScript." },
-    { question: "Explain how a REST API works and its main components." }
-  ];
+//   const technicalQuestions = [
+//     { question: "Write a function to reverse a linked list in JavaScript." },
+//     { question: "Explain how a REST API works and its main components." }
+//   ];
 
-  console.log("\n Running Technical Interview...");
-  const technicalResults = await runTechnicalInterview(technicalQuestions);
-  console.log(JSON.stringify(technicalResults, null, 2));
-};
+//   console.log("\n Running Technical Interview...");
+//   const technicalResults = await runTechnicalInterview(technicalQuestions);
+//   console.log(JSON.stringify(technicalResults, null, 2));
+// };
 
-runTest();
+// runTest();
+
+
+
+// Lang graph agent test 
+
+
+
+import { runCareerGraph } from "./graph/carrierGraph.js";
+
+const resumeText = `
+Full Stack Developer skilled in Flutter, Node.js, Firebase, and MongoDB.
+Built blockchain-integrated applications and REST APIs.
+`;
+
+const jobPostings = [
+  {
+    title: "Flutter Developer",
+    company: "TechNova Labs",
+    description:
+      "Looking for a Flutter Developer with Firebase and REST API integration experience.",
+  },
+  {
+    title: "React Engineer",
+    company: "PixelEdge",
+    description:
+      "Frontend developer with strong ReactJS and Next.js background.",
+  },
+  {
+    title: "Blockchain Developer",
+    company: "ChainX",
+    description:
+      "Developer with smart contract and Solidity experience for decentralized apps.",
+  },
+];
+
+const report = await runCareerGraph(resumeText, jobPostings);
+console.log("\n===== 🧾 CareerForge Report =====");
+console.log("Resume Analysis:", report.analysis);
+console.log("\nTop Job Matches:", report.matches);
 
 
 
