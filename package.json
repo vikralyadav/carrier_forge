@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "setup": "node setup.js",
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "demo": "node examples/demo.js",
+    "test": "node test-api.js",
+    "test:pdf": "node test-pdf-fix.js",
+    "create:test-pdf": "node create-test-pdf.js",
+    "validate": "node validate.js",
+    "test:all": "npm run demo && npm run test",
+    "check": "npm run validate && npm run test"
   },
   "keywords": [],
   "author": "",
@@ -12,10 +21,14 @@
   "dependencies": {
     "@langchain/langgraph": "^1.0.0",
     "axios": "^1.12.2",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
+    "express": "^4.18.2",
     "fs-extra": "^11.3.2",
     "langchain": "^1.0.1",
+    "multer": "^1.4.5-lts.1",
     "ollama": "^0.6.0",
     "pdf-parse": "^2.4.3"
-  }
+  },
+  "type": "module"
 }

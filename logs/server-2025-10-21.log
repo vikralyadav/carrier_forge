@@ -1,0 +1,9 @@
+{"timestamp":"2025-10-21T16:31:24.862Z","level":"INFO","service":"server","message":"CareerForge API running on port 3000"}
+{"timestamp":"2025-10-21T16:31:24.865Z","level":"INFO","service":"server","message":"Health check: http://localhost:3000/api/health"}
+{"timestamp":"2025-10-21T16:31:24.869Z","level":"INFO","service":"server","message":"Dashboard: http://localhost:3000"}
+{"timestamp":"2025-10-21T16:41:12.517Z","level":"INFO","service":"server","message":"CareerForge API running on port 3000"}
+{"timestamp":"2025-10-21T16:41:12.520Z","level":"INFO","service":"server","message":"Health check: http://localhost:3000/api/health"}
+{"timestamp":"2025-10-21T16:41:12.530Z","level":"INFO","service":"server","message":"Dashboard: http://localhost:3000"}
+{"timestamp":"2025-10-21T17:18:18.384Z","level":"INFO","service":"server","message":"CareerForge API running on port 3000"}
+{"timestamp":"2025-10-21T17:18:18.393Z","level":"INFO","service":"server","message":"Health check: http://localhost:3000/api/health"}
+{"timestamp":"2025-10-21T17:18:18.394Z","level":"INFO","service":"server","message":"Dashboard: http://localhost:3000"}

@@ -1,0 +1,24 @@
+
+John Doe
+Software Engineer
+john.doe@email.com | (555) 123-4567
+
+PROFESSIONAL SUMMARY
+Experienced software engineer with 3+ years in full-stack development.
+Skilled in JavaScript, React, Node.js, and Python.
+
+TECHNICAL SKILLS
+- Programming Languages: JavaScript, Python, Java
+- Frontend: React, HTML5, CSS3
+- Backend: Node.js, Express.js
+- Databases: MongoDB, PostgreSQL
+
+EXPERIENCE
+Software Engineer | TechCorp Inc. | 2021 - Present
+- Developed web applications using React and Node.js
+- Built RESTful APIs and database systems
+- Collaborated with cross-functional teams
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of Technology | 2018 - 2021

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerForge - AI Career Assistant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .loading {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-rocket text-2xl mr-3"></i>
+                    <h1 class="text-xl font-bold">CareerForge</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm">AI Career Assistant</span>
+                    <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Hero Section -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                Build and Polish Your Career Assets with AI
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Get hired faster with our comprehensive AI-powered career platform. 
+                Resume optimization, job matching, interview coaching, and more.
+            </p>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- Resume Analyzer -->
+            <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-file-alt text-blue-500 text-2xl mr-3"></i>
+                    <h3 class="text-lg font-semibold">Resume Analyzer</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Parse and optimize your resume for ATS systems</p>
+                <button onclick="openResumeModal()" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">
+                    Analyze Resume
+                </button>
+            </div>
+
+            <!-- Job Matcher -->
+            <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-search text-green-500 text-2xl mr-3"></i>
+                    <h3 class="text-lg font-semibold">Job Matcher</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Find the best job matches for your skills</p>
+                <button onclick="openJobMatcherModal()" class="w-full bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+                    Match Jobs
+                </button>
+            </div>
+
+            <!-- Interview Coach -->
+            <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-comments text-purple-500 text-2xl mr-3"></i>
+                    <h3 class="text-lg font-semibold">Interview Coach</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Practice behavioral and technical interviews</p>
+                <button onclick="openInterviewModal()" class="w-full bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600 transition">
+                    Start Practice
+                </button>
+            </div>
+
+            <!-- Code Reviewer -->
+            <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-code text-orange-500 text-2xl mr-3"></i>
+                    <h3 class="text-lg font-semibold">Code Reviewer</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Get expert code reviews and suggestions</p>
+                <button onclick="openCodeReviewModal()" class="w-full bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600 transition">
+                    Review Code
+                </button>
+            </div>
+
+            <!-- Portfolio Generator -->
+            <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-briefcase text-indigo-500 text-2xl mr-3"></i>
+                    <h3 class="text-lg font-semibold">Portfolio Generator</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Create tailored portfolios and cover letters</p>
+                <button onclick="openPortfolioModal()" class="w-full bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600 transition">
+                    Generate Portfolio
+                </button>
+            </div>
+
+            <!-- Scheduler -->
+            <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-calendar text-pink-500 text-2xl mr-3"></i>
+                    <h3 class="text-lg font-semibold">Career Scheduler</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Track applications and schedule practice</p>
+                <button onclick="openSchedulerModal()" class="w-full bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600 transition">
+                    Manage Career
+                </button>
+            </div>
+        </div>
+
+        <!-- Status Dashboard -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">System Status</h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-green-600" id="api-status">Online</div>
+                    <div class="text-sm text-gray-600">API Status</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-blue-600" id="ollama-status">Connected</div>
+                    <div class="text-sm text-gray-600">Ollama AI</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-purple-600" id="agents-status">Ready</div>
+                    <div class="text-sm text-gray-600">AI Agents</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-orange-600" id="vector-status">Active</div>
+                    <div class="text-sm text-gray-600">Vector Store</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Resume Analyzer</h3>
+                        <button onclick="closeModal('resumeModal')" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form id="resumeForm" enctype="multipart/form-data">
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Upload Resume (PDF)</label>
+                            <input type="file" id="resumeFile" name="resume" accept=".pdf" class="w-full border border-gray-300 rounded-md p-2">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Job Description</label>
+                            <textarea id="jobDescription" name="jobDescription" rows="4" class="w-full border border-gray-300 rounded-md p-2" placeholder="Paste the job description here..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">
+                            Analyze Resume
+                        </button>
+                    </form>
+                    <div id="resumeResults" class="mt-4 hidden">
+                        <h4 class="font-semibold mb-2">Analysis Results:</h4>
+                        <div id="resumeAnalysis" class="bg-gray-100 p-4 rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Matcher Modal -->
+    <div id="jobMatcherModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Job Matcher</h3>
+                        <button onclick="closeModal('jobMatcherModal')" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form id="jobMatcherForm">
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Resume Text</label>
+                            <textarea id="resumeText" name="resumeText" rows="4" class="w-full border border-gray-300 rounded-md p-2" placeholder="Paste your resume text here..."></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Job Description</label>
+                            <textarea id="jobDesc" name="jobDescription" rows="4" class="w-full border border-gray-300 rounded-md p-2" placeholder="Paste the job description here..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+                            Match Jobs
+                        </button>
+                    </form>
+                    <div id="jobMatcherResults" class="mt-4 hidden">
+                        <h4 class="font-semibold mb-2">Match Results:</h4>
+                        <div id="jobMatches" class="bg-gray-100 p-4 rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interview Modal -->
+    <div id="interviewModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Interview Coach</h3>
+                        <button onclick="closeModal('interviewModal')" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Interview Type</label>
+                        <select id="interviewType" class="w-full border border-gray-300 rounded-md p-2">
+                            <option value="behavioral">Behavioral Interview</option>
+                            <option value="technical">Technical Interview</option>
+                        </select>
+                    </div>
+                    <button onclick="startInterview()" class="w-full bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600 transition">
+                        Start Interview Practice
+                    </button>
+                    <div id="interviewResults" class="mt-4 hidden">
+                        <h4 class="font-semibold mb-2">Interview Session:</h4>
+                        <div id="interviewContent" class="bg-gray-100 p-4 rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Code Review Modal -->
+    <div id="codeReviewModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Code Reviewer</h3>
+                        <button onclick="closeModal('codeReviewModal')" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form id="codeReviewForm">
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Programming Language</label>
+                            <select id="codeLanguage" class="w-full border border-gray-300 rounded-md p-2">
+                                <option value="javascript">JavaScript</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="cpp">C++</option>
+                                <option value="go">Go</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Code to Review</label>
+                            <textarea id="codeToReview" name="code" rows="10" class="w-full border border-gray-300 rounded-md p-2 font-mono text-sm" placeholder="Paste your code here..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600 transition">
+                            Review Code
+                        </button>
+                    </form>
+                    <div id="codeReviewResults" class="mt-4 hidden">
+                        <h4 class="font-semibold mb-2">Review Results:</h4>
+                        <div id="codeAnalysis" class="bg-gray-100 p-4 rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal -->
+    <div id="portfolioModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Portfolio Generator</h3>
+                        <button onclick="closeModal('portfolioModal')" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form id="portfolioForm">
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Resume Text</label>
+                            <textarea id="portfolioResumeText" name="resumeText" rows="4" class="w-full border border-gray-300 rounded-md p-2" placeholder="Paste your resume text here..."></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Job Description</label>
+                            <textarea id="portfolioJobDesc" name="jobDescription" rows="4" class="w-full border border-gray-300 rounded-md p-2" placeholder="Paste the job description here..."></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Portfolio Type</label>
+                            <select id="portfolioType" class="w-full border border-gray-300 rounded-md p-2">
+                                <option value="github">GitHub Portfolio</option>
+                                <option value="website">Personal Website</option>
+                                <option value="linkedin">LinkedIn Profile</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600 transition">
+                            Generate Portfolio
+                        </button>
+                    </form>
+                    <div id="portfolioResults" class="mt-4 hidden">
+                        <h4 class="font-semibold mb-2">Portfolio Suggestions:</h4>
+                        <div id="portfolioContent" class="bg-gray-100 p-4 rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scheduler Modal -->
+    <div id="schedulerModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Career Scheduler</h3>
+                        <button onclick="closeModal('schedulerModal')" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Scheduler Type</label>
+                        <select id="schedulerType" class="w-full border border-gray-300 rounded-md p-2">
+                            <option value="followup">Follow-up Email Generator</option>
+                            <option value="practice">Practice Schedule</option>
+                            <option value="tracker">Application Tracker</option>
+                            <option value="prep">Interview Prep Plan</option>
+                        </select>
+                    </div>
+                    <button onclick="openSchedulerForm()" class="w-full bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600 transition">
+                        Get Started
+                    </button>
+                    <div id="schedulerResults" class="mt-4 hidden">
+                        <h4 class="font-semibold mb-2">Scheduler Results:</h4>
+                        <div id="schedulerContent" class="bg-gray-100 p-4 rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openResumeModal() {
+            document.getElementById('resumeModal').classList.remove('hidden');
+        }
+
+        function openJobMatcherModal() {
+            document.getElementById('jobMatcherModal').classList.remove('hidden');
+        }
+
+        function openInterviewModal() {
+            document.getElementById('interviewModal').classList.remove('hidden');
+        }
+
+        function openCodeReviewModal() {
+            document.getElementById('codeReviewModal').classList.remove('hidden');
+        }
+
+        function openPortfolioModal() {
+            document.getElementById('portfolioModal').classList.remove('hidden');
+        }
+
+        function openSchedulerModal() {
+            document.getElementById('schedulerModal').classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // API functions
+        async function makeRequest(url, data, method = 'POST') {
+            try {
+                const response = await fetch(url, {
+                    method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                return await response.json();
+            } catch (error) {
+                console.error('API Error:', error);
+                return { error: 'Failed to connect to API' };
+            }
+        }
+
+        // Resume form handler
+        document.getElementById('resumeForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData();
+            const file = document.getElementById('resumeFile').files[0];
+            const jobDescription = document.getElementById('jobDescription').value;
+
+            if (!file || !jobDescription) {
+                alert('Please upload a resume file and provide a job description');
+                return;
+            }
+
+            formData.append('resume', file);
+            formData.append('jobDescription', jobDescription);
+
+            try {
+                const response = await fetch('/api/resume/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    document.getElementById('resumeResults').classList.remove('hidden');
+                    document.getElementById('resumeAnalysis').innerHTML = 
+                        `<pre>${JSON.stringify(result.data.analysis, null, 2)}</pre>`;
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                alert('Error analyzing resume: ' + error.message);
+            }
+        });
+
+        // Job matcher form handler
+        document.getElementById('jobMatcherForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const resumeText = document.getElementById('resumeText').value;
+            const jobDescription = document.getElementById('jobDesc').value;
+
+            if (!resumeText || !jobDescription) {
+                alert('Please provide both resume text and job description');
+                return;
+            }
+
+            const result = await makeRequest('/api/jobs/match', {
+                resumeText,
+                jobDescription
+            });
+
+            if (result.success) {
+                document.getElementById('jobMatcherResults').classList.remove('hidden');
+                document.getElementById('jobMatches').innerHTML = 
+                    `<pre>${JSON.stringify(result.data.match, null, 2)}</pre>`;
+            } else {
+                alert('Error: ' + result.error);
+            }
+        });
+
+        // Interview handler
+        async function startInterview() {
+            const interviewType = document.getElementById('interviewType').value;
+            
+            const result = await makeRequest('/api/interview/behavioral', {
+                mode: 'question'
+            });
+
+            if (result.success) {
+                document.getElementById('interviewResults').classList.remove('hidden');
+                document.getElementById('interviewContent').innerHTML = 
+                    `<div class="mb-4"><strong>Question:</strong><br>${result.data.message}</div>
+                     <textarea id="userAnswer" rows="4" class="w-full border border-gray-300 rounded-md p-2" placeholder="Your answer..."></textarea>
+                     <button onclick="submitAnswer()" class="mt-2 bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600 transition">Submit Answer</button>`;
+            } else {
+                alert('Error: ' + result.error);
+            }
+        }
+
+        async function submitAnswer() {
+            const userAnswer = document.getElementById('userAnswer').value;
+            
+            const result = await makeRequest('/api/interview/behavioral', {
+                mode: 'feedback',
+                userAnswer
+            });
+
+            if (result.success) {
+                document.getElementById('interviewContent').innerHTML += 
+                    `<div class="mt-4 p-4 bg-blue-50 rounded"><strong>Feedback:</strong><br>${result.data.message}</div>`;
+            } else {
+                alert('Error: ' + result.error);
+            }
+        }
+
+        // Code review form handler
+        document.getElementById('codeReviewForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const code = document.getElementById('codeToReview').value;
+            const language = document.getElementById('codeLanguage').value;
+
+            if (!code) {
+                alert('Please provide code to review');
+                return;
+            }
+
+            // This would need to be implemented in the backend
+            alert('Code review feature coming soon!');
+        });
+
+        // Portfolio form handler
+        document.getElementById('portfolioForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const resumeText = document.getElementById('portfolioResumeText').value;
+            const jobDescription = document.getElementById('portfolioJobDesc').value;
+            const portfolioType = document.getElementById('portfolioType').value;
+
+            if (!resumeText || !jobDescription) {
+                alert('Please provide both resume text and job description');
+                return;
+            }
+
+            const result = await makeRequest('/api/portfolio/generate', {
+                resumeText,
+                jobDescription,
+                portfolioType
+            });
+
+            if (result.success) {
+                document.getElementById('portfolioResults').classList.remove('hidden');
+                document.getElementById('portfolioContent').innerHTML = 
+                    `<pre>${JSON.stringify(result.data.portfolio, null, 2)}</pre>`;
+            } else {
+                alert('Error: ' + result.error);
+            }
+        });
+
+        // Scheduler handler
+        function openSchedulerForm() {
+            const schedulerType = document.getElementById('schedulerType').value;
+            alert(`${schedulerType} feature coming soon!`);
+        }
+
+        // Check API status on load
+        async function checkAPIStatus() {
+            try {
+                const response = await fetch('/api/health');
+                const result = await response.json();
+                if (result.status === 'OK') {
+                    document.getElementById('api-status').textContent = 'Online';
+                    document.getElementById('api-status').className = 'text-2xl font-bold text-green-600';
+                }
+            } catch (error) {
+                document.getElementById('api-status').textContent = 'Offline';
+                document.getElementById('api-status').className = 'text-2xl font-bold text-red-600';
+            }
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAPIStatus();
+        });
+    </script>
+</body>
+</html>

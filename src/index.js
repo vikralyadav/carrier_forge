@@ -151,40 +151,47 @@
 
 
 
-import { runCareerGraph } from "./graph/carrierGraph.js";
+// import { runCareerGraph } from "./graph/carrierGraph.js";
 
-const resumeText = `
-Full Stack Developer skilled in Flutter, Node.js, Firebase, and MongoDB.
-Built blockchain-integrated applications and REST APIs.
-`;
+// const resumeText = `
+// Full Stack Developer skilled in Flutter, Node.js, Firebase, and MongoDB.
+// Built blockchain-integrated applications and REST APIs.
+// `;
 
-const jobPostings = [
-  {
-    title: "Flutter Developer",
-    company: "TechNova Labs",
-    description:
-      "Looking for a Flutter Developer with Firebase and REST API integration experience.",
-  },
-  {
-    title: "React Engineer",
-    company: "PixelEdge",
-    description:
-      "Frontend developer with strong ReactJS and Next.js background.",
-  },
-  {
-    title: "Blockchain Developer",
-    company: "ChainX",
-    description:
-      "Developer with smart contract and Solidity experience for decentralized apps.",
-  },
-];
+// const jobPostings = [
+//   {
+//     title: "Flutter Developer",
+//     company: "TechNova Labs",
+//     description:
+//       "Looking for a Flutter Developer with Firebase and REST API integration experience.",
+//   },
+//   {
+//     title: "React Engineer",
+//     company: "PixelEdge",
+//     description:
+//       "Frontend developer with strong ReactJS and Next.js background.",
+//   },
+//   {
+//     title: "Blockchain Developer",
+//     company: "ChainX",
+//     description:
+//       "Developer with smart contract and Solidity experience for decentralized apps.",
+//   },
+// ];
 
-const report = await runCareerGraph(resumeText, jobPostings);
-console.log("\n===== 🧾 CareerForge Report =====");
-console.log("Resume Analysis:", report.analysis);
-console.log("\nTop Job Matches:", report.matches);
+// const report = await runCareerGraph(resumeText, jobPostings);
+// console.log("\n=====  CareerForge Report =====");
+// console.log("Resume Analysis:", report.analysis);
+// console.log("\nTop Job Matches:", report.matches);
 
+import { interviewCoach } from "./agents/interviewCoachAgent.js";
 
+const q = await interviewCoach("behavioral");
+console.log(" Interviewer:", q.message);
+
+const a = "In my last project, our deadlines were tight. I organized daily stand-ups and delegated tasks to ensure timely delivery.";
+const feedback = await interviewCoach("behavioral", a);
+console.log(" Feedback:", feedback.message);
 
 
 

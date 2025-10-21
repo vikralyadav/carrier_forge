@@ -1,0 +1,13 @@
+{"timestamp":"2025-10-21T16:21:39.239Z","level":"INFO","service":"resume","message":"Starting resume analysis","filename":"Vikral_Yadav.pdf","size":116805}
+{"timestamp":"2025-10-21T16:21:39.254Z","level":"ERROR","service":"resume","message":"Resume analysis failed","code":"ERR_INVALID_ARG_VALUE"}
+{"timestamp":"2025-10-21T16:21:47.548Z","level":"INFO","service":"resume","message":"Starting resume analysis","filename":"Vikral_Yadav.pdf","size":116805}
+{"timestamp":"2025-10-21T16:21:47.557Z","level":"ERROR","service":"resume","message":"Resume analysis failed","code":"ERR_INVALID_ARG_VALUE"}
+{"timestamp":"2025-10-21T16:33:33.437Z","level":"INFO","service":"resume","message":"Starting resume analysis","filename":"Vikral_Yadav.pdf","size":116805}
+{"timestamp":"2025-10-21T16:33:33.473Z","level":"ERROR","service":"resume","message":"Resume analysis failed"}
+{"timestamp":"2025-10-21T16:41:32.976Z","level":"INFO","service":"resume","message":"Starting resume optimization","optimizationType":"ats"}
+{"timestamp":"2025-10-21T16:50:21.599Z","level":"INFO","service":"resume","message":"Starting resume optimization","optimizationType":"ats"}
+{"timestamp":"2025-10-21T16:58:30.652Z","level":"INFO","service":"resume","message":"Starting resume optimization","optimizationType":"ats"}
+{"timestamp":"2025-10-21T17:12:20.479Z","level":"INFO","service":"resume","message":"Starting resume analysis","filename":"Vikral_Yadav.pdf","size":116805}
+{"timestamp":"2025-10-21T17:12:20.481Z","level":"ERROR","service":"resume","message":"Resume analysis failed"}
+{"timestamp":"2025-10-21T17:12:29.431Z","level":"INFO","service":"resume","message":"Starting resume analysis","filename":"Vikral_Yadav.pdf","size":116805}
+{"timestamp":"2025-10-21T17:12:29.432Z","level":"ERROR","service":"resume","message":"Resume analysis failed"}

@@ -11,22 +11,21 @@ const graph = new StateGraph({
   },
 })
 
-  // first node
+
   .addNode("analyze_resume", async (state) => {
-    console.log("🔍 Analyzing Resume...");
-    const analysis = await analyzeResume(state.resume, state.jobDescriptions[0]); // use 1 JD for context
+    console.log(" Analyzing Resume...");
+    const analysis = await analyzeResume(state.resume, state.jobDescriptions[0]);
     return { ...state, analysis };
   })
 
-  // second node
   .addNode("match_jobs", async (state) => {
-    console.log("🤝 Matching Jobs...");
+    console.log("Matching Jobs...");
     const matches = await matchJob(state.resume, state.jobDescriptions);
     return { ...state, matches };
   })
 
-  // define graph flow
-  .addEdge("__start__", "analyze_resume")   // ✅ start from here
+
+  .addEdge("__start__", "analyze_resume")  
   .addEdge("analyze_resume", "match_jobs")
   .addEdge("match_jobs", "__end__")
   .compile();

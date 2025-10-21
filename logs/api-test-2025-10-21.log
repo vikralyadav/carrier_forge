@@ -1,0 +1,57 @@
+{"timestamp":"2025-10-21T16:40:56.013Z","level":"INFO","service":"api-test","message":"Testing health endpoint..."}
+{"0":"E","1":"r","2":"r","3":"o","4":"r","timestamp":"2025-10-21T16:40:56.144Z","level":"ERROR","service":"api-test","message":"Health endpoint error:"}
+{"timestamp":"2025-10-21T16:40:56.148Z","level":"INFO","service":"api-test","message":"Testing resume analysis..."}
+{"0":"E","1":"r","2":"r","3":"o","4":"r","timestamp":"2025-10-21T16:40:56.168Z","level":"ERROR","service":"api-test","message":"Resume analysis error:"}
+{"timestamp":"2025-10-21T16:40:56.171Z","level":"INFO","service":"api-test","message":"Testing job matching..."}
+{"0":"E","1":"r","2":"r","3":"o","4":"r","timestamp":"2025-10-21T16:40:56.181Z","level":"ERROR","service":"api-test","message":"Job matching error:"}
+{"timestamp":"2025-10-21T16:40:56.185Z","level":"INFO","service":"api-test","message":"Testing interview coaching..."}
+{"0":"E","1":"r","2":"r","3":"o","4":"r","timestamp":"2025-10-21T16:40:56.197Z","level":"ERROR","service":"api-test","message":"Interview coaching error:"}
+{"timestamp":"2025-10-21T16:40:56.201Z","level":"INFO","service":"api-test","message":"Testing code review..."}
+{"0":"E","1":"r","2":"r","3":"o","4":"r","timestamp":"2025-10-21T16:40:56.213Z","level":"ERROR","service":"api-test","message":"Code review error:"}
+{"timestamp":"2025-10-21T16:40:56.216Z","level":"INFO","service":"api-test","message":"Testing portfolio generation..."}
+{"0":"E","1":"r","2":"r","3":"o","4":"r","timestamp":"2025-10-21T16:40:56.230Z","level":"ERROR","service":"api-test","message":"Portfolio generation error:"}
+{"timestamp":"2025-10-21T16:40:56.235Z","level":"INFO","service":"api-test","message":"Testing scheduler..."}
+{"0":"E","1":"r","2":"r","3":"o","4":"r","timestamp":"2025-10-21T16:40:56.246Z","level":"ERROR","service":"api-test","message":"Scheduler error:"}
+{"timestamp":"2025-10-21T16:41:32.763Z","level":"INFO","service":"api-test","message":"Testing health endpoint..."}
+{"0":"l","1":"o","2":"g","3":"g","4":"e","5":"r","6":".","7":"s","8":"u","9":"c","10":"c","11":"e","12":"s","13":"s","14":" ","15":"i","16":"s","17":" ","18":"n","19":"o","20":"t","21":" ","22":"a","23":" ","24":"f","25":"u","26":"n","27":"c","28":"t","29":"i","30":"o","31":"n","timestamp":"2025-10-21T16:41:32.909Z","level":"ERROR","service":"api-test","message":"Health endpoint error:"}
+{"timestamp":"2025-10-21T16:41:32.913Z","level":"INFO","service":"api-test","message":"Testing resume analysis..."}
+{"0":"l","1":"o","2":"g","3":"g","4":"e","5":"r","6":".","7":"s","8":"u","9":"c","10":"c","11":"e","12":"s","13":"s","14":" ","15":"i","16":"s","17":" ","18":"n","19":"o","20":"t","21":" ","22":"a","23":" ","24":"f","25":"u","26":"n","27":"c","28":"t","29":"i","30":"o","31":"n","timestamp":"2025-10-21T16:43:19.234Z","level":"ERROR","service":"api-test","message":"Resume analysis error:"}
+{"timestamp":"2025-10-21T16:43:19.236Z","level":"INFO","service":"api-test","message":"Testing job matching..."}
+{"0":"l","1":"o","2":"g","3":"g","4":"e","5":"r","6":".","7":"s","8":"u","9":"c","10":"c","11":"e","12":"s","13":"s","14":" ","15":"i","16":"s","17":" ","18":"n","19":"o","20":"t","21":" ","22":"a","23":" ","24":"f","25":"u","26":"n","27":"c","28":"t","29":"i","30":"o","31":"n","timestamp":"2025-10-21T16:44:13.637Z","level":"ERROR","service":"api-test","message":"Job matching error:"}
+{"timestamp":"2025-10-21T16:44:13.638Z","level":"INFO","service":"api-test","message":"Testing interview coaching..."}
+{"0":"l","1":"o","2":"g","3":"g","4":"e","5":"r","6":".","7":"s","8":"u","9":"c","10":"c","11":"e","12":"s","13":"s","14":" ","15":"i","16":"s","17":" ","18":"n","19":"o","20":"t","21":" ","22":"a","23":" ","24":"f","25":"u","26":"n","27":"c","28":"t","29":"i","30":"o","31":"n","timestamp":"2025-10-21T16:44:32.356Z","level":"ERROR","service":"api-test","message":"Interview coaching error:"}
+{"timestamp":"2025-10-21T16:44:32.357Z","level":"INFO","service":"api-test","message":"Testing code review..."}
+{"0":"l","1":"o","2":"g","3":"g","4":"e","5":"r","6":".","7":"s","8":"u","9":"c","10":"c","11":"e","12":"s","13":"s","14":" ","15":"i","16":"s","17":" ","18":"n","19":"o","20":"t","21":" ","22":"a","23":" ","24":"f","25":"u","26":"n","27":"c","28":"t","29":"i","30":"o","31":"n","timestamp":"2025-10-21T16:45:43.899Z","level":"ERROR","service":"api-test","message":"Code review error:"}
+{"timestamp":"2025-10-21T16:45:43.901Z","level":"INFO","service":"api-test","message":"Testing portfolio generation..."}
+{"0":"l","1":"o","2":"g","3":"g","4":"e","5":"r","6":".","7":"s","8":"u","9":"c","10":"c","11":"e","12":"s","13":"s","14":" ","15":"i","16":"s","17":" ","18":"n","19":"o","20":"t","21":" ","22":"a","23":" ","24":"f","25":"u","26":"n","27":"c","28":"t","29":"i","30":"o","31":"n","timestamp":"2025-10-21T16:48:36.803Z","level":"ERROR","service":"api-test","message":"Portfolio generation error:"}
+{"timestamp":"2025-10-21T16:48:36.804Z","level":"INFO","service":"api-test","message":"Testing scheduler..."}
+{"0":"l","1":"o","2":"g","3":"g","4":"e","5":"r","6":".","7":"s","8":"u","9":"c","10":"c","11":"e","12":"s","13":"s","14":" ","15":"i","16":"s","17":" ","18":"n","19":"o","20":"t","21":" ","22":"a","23":" ","24":"f","25":"u","26":"n","27":"c","28":"t","29":"i","30":"o","31":"n","timestamp":"2025-10-21T16:49:45.598Z","level":"ERROR","service":"api-test","message":"Scheduler error:"}
+{"timestamp":"2025-10-21T16:50:21.530Z","level":"INFO","service":"api-test","message":"Testing health endpoint..."}
+{"timestamp":"2025-10-21T16:50:21.591Z","level":"INFO","service":"api-test","message":"Health endpoint working"}
+{"timestamp":"2025-10-21T16:50:21.593Z","level":"INFO","service":"api-test","message":"Testing resume analysis..."}
+{"timestamp":"2025-10-21T16:51:36.646Z","level":"INFO","service":"api-test","message":"Resume analysis working"}
+{"timestamp":"2025-10-21T16:51:36.647Z","level":"INFO","service":"api-test","message":"Testing job matching..."}
+{"timestamp":"2025-10-21T16:52:30.701Z","level":"INFO","service":"api-test","message":"Job matching working"}
+{"timestamp":"2025-10-21T16:52:30.702Z","level":"INFO","service":"api-test","message":"Testing interview coaching..."}
+{"0":"l","1":"o","2":"g","3":"g","4":"e","5":"r","6":".","7":"s","8":"u","9":"c","10":"c","11":"e","12":"s","13":"s","14":" ","15":"i","16":"s","17":" ","18":"n","19":"o","20":"t","21":" ","22":"a","23":" ","24":"f","25":"u","26":"n","27":"c","28":"t","29":"i","30":"o","31":"n","timestamp":"2025-10-21T16:52:49.911Z","level":"ERROR","service":"api-test","message":"Interview coaching error:"}
+{"timestamp":"2025-10-21T16:52:49.913Z","level":"INFO","service":"api-test","message":"Testing code review..."}
+{"timestamp":"2025-10-21T16:54:01.783Z","level":"INFO","service":"api-test","message":"Code review working"}
+{"timestamp":"2025-10-21T16:54:01.784Z","level":"INFO","service":"api-test","message":"Testing portfolio generation..."}
+{"timestamp":"2025-10-21T16:56:53.471Z","level":"INFO","service":"api-test","message":"Portfolio generation working"}
+{"timestamp":"2025-10-21T16:56:53.473Z","level":"INFO","service":"api-test","message":"Testing scheduler..."}
+{"timestamp":"2025-10-21T16:58:12.344Z","level":"INFO","service":"api-test","message":"Scheduler working"}
+{"timestamp":"2025-10-21T16:58:30.584Z","level":"INFO","service":"api-test","message":"Testing health endpoint..."}
+{"timestamp":"2025-10-21T16:58:30.645Z","level":"INFO","service":"api-test","message":"Health endpoint working"}
+{"timestamp":"2025-10-21T16:58:30.647Z","level":"INFO","service":"api-test","message":"Testing resume analysis..."}
+{"timestamp":"2025-10-21T16:59:50.276Z","level":"INFO","service":"api-test","message":"Resume analysis working"}
+{"timestamp":"2025-10-21T16:59:50.278Z","level":"INFO","service":"api-test","message":"Testing job matching..."}
+{"timestamp":"2025-10-21T17:00:45.672Z","level":"INFO","service":"api-test","message":"Job matching working"}
+{"timestamp":"2025-10-21T17:00:45.674Z","level":"INFO","service":"api-test","message":"Testing interview coaching..."}
+{"timestamp":"2025-10-21T17:01:05.948Z","level":"INFO","service":"api-test","message":"Interview question generation working"}
+{"timestamp":"2025-10-21T17:01:33.378Z","level":"INFO","service":"api-test","message":"Interview feedback working"}
+{"timestamp":"2025-10-21T17:01:33.379Z","level":"INFO","service":"api-test","message":"Testing code review..."}
+{"timestamp":"2025-10-21T17:02:46.058Z","level":"INFO","service":"api-test","message":"Code review working"}
+{"timestamp":"2025-10-21T17:02:46.059Z","level":"INFO","service":"api-test","message":"Testing portfolio generation..."}
+{"timestamp":"2025-10-21T17:05:37.981Z","level":"INFO","service":"api-test","message":"Portfolio generation working"}
+{"timestamp":"2025-10-21T17:05:37.983Z","level":"INFO","service":"api-test","message":"Testing scheduler..."}
+{"timestamp":"2025-10-21T17:07:06.465Z","level":"INFO","service":"api-test","message":"Scheduler working"}

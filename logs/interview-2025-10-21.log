@@ -1,0 +1,9 @@
+{"timestamp":"2025-10-21T16:25:47.603Z","level":"INFO","service":"interview","message":"Starting behavioral interview","mode":"question"}
+{"timestamp":"2025-10-21T16:44:13.644Z","level":"INFO","service":"interview","message":"Starting behavioral interview","mode":"question"}
+{"timestamp":"2025-10-21T16:52:30.706Z","level":"INFO","service":"interview","message":"Starting behavioral interview","mode":"question"}
+{"timestamp":"2025-10-21T17:00:45.676Z","level":"INFO","service":"interview","message":"Starting behavioral interview","mode":"question"}
+{"timestamp":"2025-10-21T17:01:05.951Z","level":"INFO","service":"interview","message":"Starting behavioral interview","mode":"feedback"}
+{"timestamp":"2025-10-21T17:18:10.400Z","level":"INFO","service":"interview","message":"Starting behavioral interview","mode":"question"}
+{"timestamp":"2025-10-21T17:18:25.928Z","level":"INFO","service":"interview","message":"Starting behavioral interview","mode":"question"}
+{"timestamp":"2025-10-21T17:18:29.473Z","level":"INFO","service":"interview","message":"Starting behavioral interview","mode":"question"}
+{"timestamp":"2025-10-21T17:19:25.991Z","level":"INFO","service":"interview","message":"Starting behavioral interview","mode":"feedback"}

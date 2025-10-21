@@ -1,0 +1,8 @@
+{"timestamp":"2025-10-21T16:20:26.286Z","level":"INFO","service":"demo","message":"Starting resume analysis demo"}
+{"timestamp":"2025-10-21T16:21:53.804Z","level":"ERROR","service":"demo","message":"Demo failed"}
+{"timestamp":"2025-10-21T16:31:56.152Z","level":"INFO","service":"demo","message":"Starting resume analysis demo"}
+{"timestamp":"2025-10-21T16:33:18.910Z","level":"INFO","service":"demo","message":"Starting job matching demo"}
+{"timestamp":"2025-10-21T16:35:32.578Z","level":"INFO","service":"demo","message":"Starting interview coaching demo"}
+{"timestamp":"2025-10-21T16:36:24.023Z","level":"INFO","service":"demo","message":"Starting code review demo"}
+{"timestamp":"2025-10-21T16:37:31.015Z","level":"INFO","service":"demo","message":"Starting portfolio generation demo"}
+{"timestamp":"2025-10-21T16:40:37.218Z","level":"INFO","service":"demo","message":"Starting follow-up email demo"}
